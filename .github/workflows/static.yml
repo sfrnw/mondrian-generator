@@ -4,20 +4,29 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
       - name: Build
         run: |
-          # Add your build commands here
+          # Add your build commands here if needed
           # For example:
           # npm ci
           # npm run build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # Change this to your build output directory
+          publish_dir: .
+          publish_branch: gh-pages
+          force_orphan: true
+
