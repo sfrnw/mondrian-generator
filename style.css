@@ -1,32 +1,20 @@
-body {
-    background: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+body, html {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
-.container {
-    width: 600px;
-    height: 600px;
+#mondrian-container {
+    width: 100%;
+    height: 100%;
     background: white;
     position: relative;
-    margin: 20px;
-    border: 2px solid black;
 }
 
 .rectangle {
     position: absolute;
     border: 2px solid black;
     box-sizing: border-box;
-}
-
-button {
-    padding: 10px 20px;
-    background: white;
-    border: 2px solid black;
-    cursor: pointer;
-    font-weight: bold;
 }
